@@ -27,5 +27,11 @@ class ContactController
         return view('/contact');
     }
 
+    public function listContact(){
+
+        $contact =(new Contact())->all();
+
+        return view('admin/contact',compact('contact'));
+    }
 
 }

@@ -103,4 +103,9 @@ class BlogController
         (new Blog())->where('id', (int)$id)->delete();
         return redirect(url('/admin/blog'),true);
     }
+
+    public function blogList(){
+        $blogs = (new Blog())->all();
+        return view('blog', compact('blogs'));
+    }
 }
